@@ -56,8 +56,6 @@ city_filter = st.sidebar.multiselect(
 
 filtered_df = df[(df["Category"].isin(category_filter)) & (df["City"].isin(city_filter))]
 
-st.subheader(f"Filtered Data: {len(filtered_df)} records")
-
 # Total Revenue by Restaurant
 st.subheader("Total Revenue by Restaurant")
 revenue_by_restaurant = filtered_df.groupby("Restaurant")["Revenue"].sum().reset_index()
